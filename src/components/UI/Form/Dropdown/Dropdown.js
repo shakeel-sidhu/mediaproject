@@ -27,8 +27,8 @@ const Dropdown = ({dropdownData}) => {
       </button>
       </div>
       <div className={`dropdown-body ${isOpen && 'open'}`}>
-        {dropdownData.map(item => (
-          <div className="dropdown-item" onClick={e => handleItemClick(e.target.id)} id={item.id}>
+        {dropdownData.map((item,i) => (
+          <div className="dropdown-item" key={i} onClick={e => handleItemClick(e.target.id)} id={item.id}>
             <span className={`dropdown-item-dot ${item.id == selectedItem && 'selected'}`}>• </span>
             {item.label}
           </div>

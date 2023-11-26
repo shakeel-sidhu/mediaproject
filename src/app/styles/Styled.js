@@ -71,7 +71,7 @@ export const SelectorStyled = styled.button`
   letter-spacing: -0.154px;
   background: transparent;
   cursor: pointer;
-  background-color: ${props => props.indexvalue && props.keyvalue === 0 ? "#523FD7" : ""};
+  background-color: ${props => (props.indexvalue === 1 && props.keyvalue === 0 ? "#523FD7" : "")};
   &:focus{
     background-color: #523FD7;
   };

@@ -15,7 +15,7 @@ import Rangeslider from "../components/UI/Form/Rangeslider/Rangeslider";
 
 const Home = () => {
   const [values, setValue] = useState("");
-  const [indexval, setIndexValue] = useState(true)
+  const [indexval, setIndexValue] = useState(1)
   const selectorStyled = [
     "Fun",
     "Education",
@@ -93,7 +93,7 @@ const Home = () => {
     const value = e.target.outerText;
     setValue(value);
     if(value !== "Fun"){
-      setIndexValue(false);
+      setIndexValue(0);
     }
     if (value === "Fun") {
       setDrodownValue(funDropdown);
