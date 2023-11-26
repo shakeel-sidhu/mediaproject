@@ -48,8 +48,9 @@
     background-repeat: no-repeat;
     width: 45px !important;
     height: 45px !important;
-    top: 112% !important;
-    left: 113% !important;
+    top: 71%!important;
+    left: 113%!important;
+    background-size: 20px 38px;
 }
 
 .MuiSlider-root {
