@@ -2,8 +2,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Poppins', serif;
+  background-color: #12111A;
+  @media screen and (max-width: 767px) {
+      border-radius: 44px;
+  }
 }
 
 a {
@@ -14,8 +17,11 @@ a {
 * {
   box-sizing: border-box;
 }
+p,h1,h2,h3,h4,h5{
+  margin: 0;
+}
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -23,4 +29,4 @@ a {
     color: white;
     background: black;
   }
-}
+} */
