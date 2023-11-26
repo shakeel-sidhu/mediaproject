@@ -81,3 +81,7 @@
 .icon.open {
     transform: rotate(90deg);
 }
+.selected{
+    background-image:radial-gradient(circle at top left, #523FD7, #FF7DFF);
+    background-color:unset;
+}

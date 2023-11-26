@@ -6,11 +6,14 @@ const data = [{id: 0, label: "Istanbul, TR (AHL)"}, {id: 1, label: "Paris, FR (C
 const Dropdown = ({dropdownData}) => {
   const [isOpen, setOpen] = useState(false);
   const [items, setItem] = useState(data);
+  const [selectedValue,setSelectedValue] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
-  
-  const toggleDropdown = () => setOpen(!isOpen);
-  
-  const handleItemClick = (id) => {
+  const toggleDropdown = () => {
+    setOpen(!isOpen);
+  };
+  const handleItemClick = (e) => {
+    setSelectedValue(e.target.outerText)
+    let id = e.target.id
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id);
   }
   
@@ -19,8 +22,8 @@ const Dropdown = ({dropdownData}) => {
         <div className="buttonWrapper">
       <button className='dropdown-header' onClick={toggleDropdown}>
         {/* {selectedItem ? items.find(item => item.id == selectedItem).label : "Select your destination"} */}
-        {isOpen ? "Search" : "Select"}
-
+        {isOpen && selectedValue ? selectedValue : "Select"}
+            {selectedValue}
         <i className={`fa fa-chevron-right icon ${isOpen && "open"}`}></i>
         {isOpen ? <img src="/images/elementsarrow.svg"/> : <img src="/images/elementsdown.svg"/>}
 
@@ -28,8 +31,8 @@ const Dropdown = ({dropdownData}) => {
       </div>
       <div className={`dropdown-body ${isOpen && 'open'}`}>
         {dropdownData.map((item,i) => (
-          <div className="dropdown-item" key={i} onClick={e => handleItemClick(e.target.id)} id={item.id}>
-            <span className={`dropdown-item-dot ${item.id == selectedItem && 'selected'}`}>• </span>
+          <div className={`dropdown-item ${item.id == selectedItem && 'selected'}`} key={i} onClick={e => handleItemClick(e)} id={item.id}>
+            <span className={`dropdown-item-dot `}></span>
             {item.label}
           </div>
         ))}
