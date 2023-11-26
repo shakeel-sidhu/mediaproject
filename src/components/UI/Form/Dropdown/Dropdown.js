@@ -3,15 +3,21 @@ import "./Dropdown.css"
 
 const data = [{id: 0, label: "Istanbul, TR (AHL)"}, {id: 1, label: "Paris, FR (CDG)"}];
 
-const Dropdown = ({dropdownData}) => {
+const Dropdown = ({dropdownData,hanldeClick}) => {
   const [isOpen, setOpen] = useState(false);
   const [items, setItem] = useState(data);
   const [selectedValue,setSelectedValue] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
-  const toggleDropdown = () => {
-    setSelectedValue("Select")
-    setOpen(!isOpen);
+  const toggleDropdown = () => setOpen(!isOpen);
+  const hanldeValue = ()=>{
+    if(hanldeClick){
+      setOpen(false);
+      setSelectedValue("");
+    }
   };
+  useEffect(()=>{
+    hanldeValue();
+  },[hanldeClick]);
   const handleItemClick = (e) => {
     setSelectedValue(e.target.outerText)
     let id = e.target.id
@@ -31,7 +37,7 @@ const Dropdown = ({dropdownData}) => {
       </div>
       <div className={`dropdown-body ${isOpen && 'open'}`}>
         {dropdownData.map((item,i) => (
-          <div className={`dropdown-item ${item.id == selectedItem && 'selected'}`} key={i} onClick={e => handleItemClick(e)} id={item.id}>
+          <div className={`dropdown-item ${item.id == selectedItem && selectedValue !== "" ?  'selected' : ""}`} key={i} onClick={e => handleItemClick(e)} id={item.id}>
             <span className={`dropdown-item-dot `}></span>
             {item.label}
           </div>

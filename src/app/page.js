@@ -138,7 +138,7 @@ const Home = () => {
             Which type of “{values}” content do you want to create?
           </TextStyled>
           <DropDownWrapper>
-            <Dropdown dropdownData={dropdownValue} />
+            <Dropdown dropdownData={dropdownValue} hanldeClick={values} />
           </DropDownWrapper>
           <TextNumberStyled>
             Set the number of words for output text.
