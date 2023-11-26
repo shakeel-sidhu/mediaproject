@@ -5,7 +5,7 @@ import "./Rangeslider.css";
 
 export default function Rangeslider() {
   return (
-    <Box sx={{ width: 381 }}>
+    <Box>
         <div className="sliderWrapper">
       <span className="spanValue">100</span>
       <Slider
