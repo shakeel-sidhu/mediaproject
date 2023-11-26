@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const HeaderStyled = styled.header`
   background: #09090d;
   border-bottom: 1px solid #3a3940;
-  max-width: 1440px;
   margin: 0 auto;
   @media screen and (max-width: 767px) {
     background: unset;
