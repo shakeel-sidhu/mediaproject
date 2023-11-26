@@ -23,7 +23,6 @@ const Dropdown = ({dropdownData}) => {
       <button className='dropdown-header' onClick={toggleDropdown}>
         {/* {selectedItem ? items.find(item => item.id == selectedItem).label : "Select your destination"} */}
         {isOpen && selectedValue ? selectedValue : "Select"}
-            {selectedValue}
         <i className={`fa fa-chevron-right icon ${isOpen && "open"}`}></i>
         {isOpen ? <img src="/images/elementsarrow.svg"/> : <img src="/images/elementsdown.svg"/>}
 
