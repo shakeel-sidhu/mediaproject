@@ -9,6 +9,7 @@ const Dropdown = ({dropdownData}) => {
   const [selectedValue,setSelectedValue] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
   const toggleDropdown = () => {
+    setSelectedValue("Select")
     setOpen(!isOpen);
   };
   const handleItemClick = (e) => {
